@@ -10,6 +10,7 @@
 *.plan
 *.negative
 *.trace
+*.tar
 learn/events*
 /mnist_model/
 *.bin
