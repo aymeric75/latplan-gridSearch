@@ -1,0 +1,415 @@
+Default float: float32
+{'mode': 'learn', 'track': 'cylinders-4-flat', 'num_examples': 20000, 'aeclass': 'CubeSpaceAE_AMA4Conv', 'comment': 'kltune2', 'hash': '05-06T11:28:54/grid2'}
+paaaaaaaa
+{'test_noise': False, 'test_hard': True, 'train_noise': True, 'train_hard': False, 'dropout_z': False, 'noise': 0.2, 'dropout': 0.2, 'optimizer': 'radam', 'min_temperature': 0.5, 'epoch': 2000, 'gs_annealing_start': 0, 'gs_annealing_end': 1000, 'kl_cycle_start': 2000, 'clipnorm': 0.1, 'batch_size': [400], 'lr': [0.001], 'N': [50, 100, 300], 'zerosuppress': 0.1, 'densify': False, 'max_temperature': [5.0], 'conv_channel': [32], 'conv_channel_increment': [1], 'conv_kernel': [5], 'conv_pooling': [1], 'conv_per_pooling': [1], 'conv_depth': [3], 'fc_width': [100], 'fc_depth': [2], 'A': [6000], 'aae_activation': ['relu'], 'aae_width': [1000], 'aae_depth': [2], 'eff_regularizer': [None], 'beta_d': [1, 10, 100, 1000, 10000], 'beta_z': [1, 10], 'output': 'GaussianOutput(sigma=0.1)', 'aeclass': 'CubeSpaceAE_AMA4Conv'}
+loaded. picsize: [100 150   3]
+(20000, 2, 30, 45, 3)
+normalized shape: (30, 45, 3) (30, 45, 3)
+pattthhhh
+samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2
+/aux.json
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f4776dc8670>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f4776dc8670>
+<keras.layers.normalization.BatchNormalization object at 0x7f4773cc6790>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f4773cc6790>
+<keras.layers.core.Dropout object at 0x7f4773cc6850>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4773cc6850>
+<keras.layers.convolutional.Conv2D object at 0x7f4773cc68b0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f4773cc68b0>
+<keras.layers.normalization.BatchNormalization object at 0x7f4773cc6a00>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f4773cc6a00>
+<keras.layers.core.Dropout object at 0x7f4773cc6ac0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4773cc6ac0>
+latent space shape is (30, 45, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f4773cc6f10>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f4773cc6f10>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f4773cce0a0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f4773cce0a0>
+<keras.layers.normalization.BatchNormalization object at 0x7f4773cce2e0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f4773cce2e0>
+<keras.layers.core.Dropout object at 0x7f4773cce820>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4773cce820>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f4773cce220>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f4773cce220>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f47735c0250> with <keras_radam.optimizers.RAdam object at 0x7f476d260d90>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f477360da60>.
+Network compiled
+Saving the network to samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2/grid2/logs/06-03T07:41:05.048/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [8402.62266 10230.37979 7562.49437 5.85841 56.11373]
+old best = [18178440.6, 18178440.6, 18174167.35, 59.43809051513672, 101.06128845214843]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f455598b700>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f455598b700>
+<keras.layers.normalization.BatchNormalization object at 0x7f455598bbb0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f455598bbb0>
+<keras.layers.core.Dropout object at 0x7f455598bc70>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f455598bc70>
+<keras.layers.convolutional.Conv2D object at 0x7f455598bcd0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f455598bcd0>
+<keras.layers.normalization.BatchNormalization object at 0x7f455598bdf0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f455598bdf0>
+<keras.layers.core.Dropout object at 0x7f455598beb0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f455598beb0>
+latent space shape is (30, 45, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f45559884c0>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f45559884c0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f45559884f0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f45559884f0>
+<keras.layers.normalization.BatchNormalization object at 0x7f45559886d0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f45559886d0>
+<keras.layers.core.Dropout object at 0x7f4555988c10>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4555988c10>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f4555988610>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f4555988610>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f469dc22430> with <keras_radam.optimizers.RAdam object at 0x7f4773c992b0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f475d54a700>.
+Network compiled
+Saving the network to samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2/grid2/logs/06-03T17:39:04.933/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [5665.54146 6071.62480 4851.64259 12.50134 119.98026]
+old best = [8402.62265625, 10230.37978515625, 7562.494372558594, 5.8584136962890625, 56.113726425170896]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f476d0c67c0>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f476d0c67c0>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d0c6c70>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d0c6c70>
+<keras.layers.core.Dropout object at 0x7f476d0c6d30>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d0c6d30>
+<keras.layers.convolutional.Conv2D object at 0x7f476d0c6d90>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f476d0c6d90>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d0c6eb0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d0c6eb0>
+<keras.layers.core.Dropout object at 0x7f476d0c6f70>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d0c6f70>
+latent space shape is (30, 45, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f476d0cb580>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f476d0cb580>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f476d0cb5b0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f476d0cb5b0>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d0cb790>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d0cb790>
+<keras.layers.core.Dropout object at 0x7f476d0cbcd0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d0cbcd0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f476d0cb6d0>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f476d0cb6d0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f4776d3c2e0> with <keras_radam.optimizers.RAdam object at 0x7f476d2ce8e0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f476046c550>.
+Network compiled
+Saving the network to samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2/grid2/logs/06-04T03:37:41.453/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [5320.43218 5377.11440 4524.41631 17.36292 114.05088]
+old best = [5665.541455078125, 6071.6248046875, 4851.642590332031, 12.501338768005372, 119.98026275634766]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f475cd30dc0>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f475cd30dc0>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d58a040>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d58a040>
+<keras.layers.core.Dropout object at 0x7f476d58a370>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d58a370>
+<keras.layers.convolutional.Conv2D object at 0x7f476d58a3d0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f476d58a3d0>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d58a4f0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d58a4f0>
+<keras.layers.core.Dropout object at 0x7f476d58a5b0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d58a5b0>
+latent space shape is (30, 45, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f476d58ab80>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f476d58ab80>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f476d58abb0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f476d58abb0>
+<keras.layers.normalization.BatchNormalization object at 0x7f476d58ad90>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476d58ad90>
+<keras.layers.core.Dropout object at 0x7f476d58ad00>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476d58ad00>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f476d58acd0>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f476d58acd0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f475c955a90> with <keras_radam.optimizers.RAdam object at 0x7f4693d1ddc0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f475c959430>.
+Network compiled
+Saving the network to samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2/grid2/logs/06-04T13:38:16.085/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f475cd5edc0>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f475cd5edc0>
+<keras.layers.normalization.BatchNormalization object at 0x7f475cd4e040>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f475cd4e040>
+<keras.layers.core.Dropout object at 0x7f475cd4e370>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f475cd4e370>
+<keras.layers.convolutional.Conv2D object at 0x7f475cd4e3d0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f475cd4e3d0>
+<keras.layers.normalization.BatchNormalization object at 0x7f475cd4e4f0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f475cd4e4f0>
+<keras.layers.core.Dropout object at 0x7f475cd4e5b0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f475cd4e5b0>
+latent space shape is (30, 45, 32) : 300 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f475cd4eb80>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f475cd4eb80>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f475cd4ebb0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f475cd4ebb0>
+<keras.layers.normalization.BatchNormalization object at 0x7f475cd4ed90>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f475cd4ed90>
+<keras.layers.core.Dropout object at 0x7f475cd4ed00>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f475cd4ed00>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f475cd4ecd0>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f475cd4ecd0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f4760bf6c70> with <keras_radam.optimizers.RAdam object at 0x7f476cf19fa0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f47607269d0>.
+Network compiled
+Saving the network to samples/blocks_cylinders-4-flat_20000_CubeSpaceAE_AMA4Conv_kltune2/grid2/logs/06-04T23:39:38.296/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f4692b8af40>
+[0, 30, 45, 3] -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f4692b8af40>
+<keras.layers.normalization.BatchNormalization object at 0x7f4760976670>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f4760976670>
+<keras.layers.core.Dropout object at 0x7f4760976730>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4760976730>
+<keras.layers.convolutional.Conv2D object at 0x7f4760976790>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2D object at 0x7f4760976790>
+<keras.layers.normalization.BatchNormalization object at 0x7f47609768b0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f47609768b0>
+<keras.layers.core.Dropout object at 0x7f4760976970>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f4760976970>
+latent space shape is (30, 45, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 30 W: 45 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f4760976f40>
+[0, 30, 45, 32] -> (0, 30, 45, 32) : <keras.layers.core.Reshape object at 0x7f4760976f40>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f4760976f70>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f4760976f70>
+<keras.layers.normalization.BatchNormalization object at 0x7f476085f190>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f476085f190>
+<keras.layers.core.Dropout object at 0x7f476085f6d0>
+(0, 30, 45, 32) -> (0, 30, 45, 32) : <keras.layers.core.Dropout object at 0x7f476085f6d0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f4760976fd0>
+(0, 30, 45, 32) -> (0, 30, 45, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f4760976fd0>
+Network built

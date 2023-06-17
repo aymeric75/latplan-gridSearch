@@ -1,0 +1,903 @@
+Default float: float32
+{'mode': 'learn', 'track': 'sokoban_image-20000-global-global-2-train', 'num_examples': 20000, 'aeclass': 'CubeSpaceAE_AMA4Conv', 'comment': 'kltune2'}
+loaded. picsize: [28 28  3]
+(19999, 2, 28, 28, 3)
+normalized shape: (28, 28, 3) (28, 28, 3)
+paaatth 
+samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7d55faa460>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7d55faa460>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9afbc580>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9afbc580>
+<keras.layers.core.Dropout object at 0x7f7c9afbc640>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9afbc640>
+<keras.layers.convolutional.Conv2D object at 0x7f7c9afbc6a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9afbc6a0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9afbc7c0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9afbc7c0>
+<keras.layers.core.Dropout object at 0x7f7c9afbc880>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9afbc880>
+latent space shape is (28, 28, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c9afbce50>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c9afbce50>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9afbce80>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9afbce80>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9afbcf70>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9afbcf70>
+<keras.layers.core.Dropout object at 0x7f7c9afd25e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9afd25e0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9afbcfa0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9afbcfa0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c9a8c2fd0> with <keras_radam.optimizers.RAdam object at 0x7f7c983d3b80>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c9a907af0>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-10T07:11:24.761/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [787.04420 877.77334 329.42719 2.63391 106.13162]
+old best : this is a first run, so there is no old best
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c9854c580>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9854c580>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c930c1790>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c930c1790>
+<keras.layers.core.Dropout object at 0x7f7c8b90be50>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c8b90be50>
+<keras.layers.convolutional.Conv2D object at 0x7f7c930bdb80>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c930bdb80>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9a8c7520>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9a8c7520>
+<keras.layers.core.Dropout object at 0x7f7c9afe1b50>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9afe1b50>
+latent space shape is (28, 28, 32) : 300 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7b416220a0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7b416220a0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9838abe0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9838abe0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9838a910>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9838a910>
+<keras.layers.core.Dropout object at 0x7f7c9a974550>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9a974550>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a8c2ca0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a8c2ca0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c81e54a30> with <keras_radam.optimizers.RAdam object at 0x7f7c8197b2b0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c81e581f0>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-10T15:21:35.638/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c987105e0>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c987105e0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98710a90>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98710a90>
+<keras.layers.core.Dropout object at 0x7f7c98710b50>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c98710b50>
+<keras.layers.convolutional.Conv2D object at 0x7f7c98710bb0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c98710bb0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98710cd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98710cd0>
+<keras.layers.core.Dropout object at 0x7f7c98710d90>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c98710d90>
+latent space shape is (28, 28, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c869483a0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c869483a0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c869483d0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c869483d0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c869485b0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c869485b0>
+<keras.layers.core.Dropout object at 0x7f7c86948af0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c86948af0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c869484f0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c869484f0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c98235490> with <keras_radam.optimizers.RAdam object at 0x7f7c982bffd0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c98237280>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-10T23:39:44.020/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [765.13614 949.35432 304.38422 0.43810 53.97875]
+old best = [787.0442016601562, 877.77333984375, 329.427188873291, 2.633912193775177, 106.13162002563476]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c982bff70>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c982bff70>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98227910>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98227910>
+<keras.layers.core.Dropout object at 0x7f7c9821e040>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9821e040>
+<keras.layers.convolutional.Conv2D object at 0x7f7c9822b5e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9822b5e0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98383700>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98383700>
+<keras.layers.core.Dropout object at 0x7f7c98383610>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c98383610>
+latent space shape is (28, 28, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c982354f0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c982354f0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98702f40>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98702f40>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98702be0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98702be0>
+<keras.layers.core.Dropout object at 0x7f7c9870afd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9870afd0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c987228b0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c987228b0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c932a4f40> with <keras_radam.optimizers.RAdam object at 0x7f7c81b6fa60>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c932a8550>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-11T07:49:57.972/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [727.20198 727.20198 348.58217 23.44990 96.60734]
+old best = [765.1361389160156, 949.3543212890625, 304.3842224121094, 0.4381046324968338, 53.97875137329102]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c817fcbb0>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c817fcbb0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c817fcfd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c817fcfd0>
+<keras.layers.core.Dropout object at 0x7f7d6ae81160>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7d6ae81160>
+<keras.layers.convolutional.Conv2D object at 0x7f7d6ae811c0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7d6ae811c0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7d6ae812e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7d6ae812e0>
+<keras.layers.core.Dropout object at 0x7f7d6ae813a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7d6ae813a0>
+latent space shape is (28, 28, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7d6ae81970>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7d6ae81970>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7d6ae819a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7d6ae819a0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7d6ae81b80>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7d6ae81b80>
+<keras.layers.core.Dropout object at 0x7f7d6ae81f10>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7d6ae81f10>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7d6ae81ac0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7d6ae81ac0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c9353f370> with <keras_radam.optimizers.RAdam object at 0x7f7c987065e0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c81f741f0>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-11T16:00:41.647/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c9858f610>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9858f610>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c98593610>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c98593610>
+<keras.layers.core.Dropout object at 0x7f7c98591580>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c98591580>
+<keras.layers.convolutional.Conv2D object at 0x7f7c98591970>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c98591970>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c985832b0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c985832b0>
+<keras.layers.core.Dropout object at 0x7f7c98583f70>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c98583f70>
+latent space shape is (28, 28, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c98180f10>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c98180f10>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98180dc0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98180dc0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c958751f0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c958751f0>
+<keras.layers.core.Dropout object at 0x7f7c95a54c70>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c95a54c70>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98180b50>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98180b50>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c93355400> with <keras_radam.optimizers.RAdam object at 0x7f7c986b6dc0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c933560d0>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-12T00:10:43.781/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c81feae20>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c81feae20>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c982dccd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c982dccd0>
+<keras.layers.core.Dropout object at 0x7f7c982dc670>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c982dc670>
+<keras.layers.convolutional.Conv2D object at 0x7f7c982ee820>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c982ee820>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c982eebb0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c982eebb0>
+<keras.layers.core.Dropout object at 0x7f7c93342ee0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c93342ee0>
+latent space shape is (28, 28, 32) : 300 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c95875c70>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c95875c70>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98196a00>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98196a00>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c93531e20>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c93531e20>
+<keras.layers.core.Dropout object at 0x7f7c981ac0a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c981ac0a0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98587fd0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c98587fd0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c93213610> with <keras_radam.optimizers.RAdam object at 0x7f7c9d1be9d0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c93217700>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-12T08:18:39.774/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c9357ab20>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9357ab20>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9809b6d0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9809b6d0>
+<keras.layers.core.Dropout object at 0x7f7c9d1be580>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9d1be580>
+<keras.layers.convolutional.Conv2D object at 0x7f7c9a87afd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9a87afd0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c95df0f70>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c95df0f70>
+<keras.layers.core.Dropout object at 0x7f7c980a0370>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c980a0370>
+latent space shape is (28, 28, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c93348910>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c93348910>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c93213610>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c93213610>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c93213280>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c93213280>
+<keras.layers.core.Dropout object at 0x7f7c984d5cd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c984d5cd0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c984e05b0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c984e05b0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c98026820> with <keras_radam.optimizers.RAdam object at 0x7f7c9333aac0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c97ffe790>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-12T16:40:58.399/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c9aabb130>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9aabb130>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9aacfcd0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9aacfcd0>
+<keras.layers.core.Dropout object at 0x7f7c95e90a90>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c95e90a90>
+<keras.layers.convolutional.Conv2D object at 0x7f7c95e7f5e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c95e7f5e0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c81dbfee0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c81dbfee0>
+<keras.layers.core.Dropout object at 0x7f7c81dbfd90>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c81dbfd90>
+latent space shape is (28, 28, 32) : 100 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c9357bee0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c9357bee0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9354d5e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9354d5e0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c935999a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c935999a0>
+<keras.layers.core.Dropout object at 0x7f7c93581f70>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c93581f70>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a90c280>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a90c280>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c95a4fa30> with <keras_radam.optimizers.RAdam object at 0x7f7c7f4f72b0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c95a3a670>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-13T00:51:45.097/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c9307e2b0>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9307e2b0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c7f4980a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c7f4980a0>
+<keras.layers.core.Dropout object at 0x7f7c7f498550>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c7f498550>
+<keras.layers.convolutional.Conv2D object at 0x7f7c7f498250>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c7f498250>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c95a49b20>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c95a49b20>
+<keras.layers.core.Dropout object at 0x7f7c7f49a160>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c7f49a160>
+latent space shape is (28, 28, 32) : 300 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c9a9225e0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c9a9225e0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9acc0220>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9acc0220>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9ace6ee0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9ace6ee0>
+<keras.layers.core.Dropout object at 0x7f7c9accb0d0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9accb0d0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c7f6a9850>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c7f6a9850>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c84370c40> with <keras_radam.optimizers.RAdam object at 0x7f7c95c9c7c0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c84380700>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-13T09:01:05.067/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c7f5cf3d0>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c7f5cf3d0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9ab2dc40>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9ab2dc40>
+<keras.layers.core.Dropout object at 0x7f7c9ab2d280>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9ab2d280>
+<keras.layers.convolutional.Conv2D object at 0x7f7c9af5b820>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c9af5b820>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9af5bb50>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9af5bb50>
+<keras.layers.core.Dropout object at 0x7f7c9af5b340>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9af5b340>
+latent space shape is (28, 28, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c95c9cc10>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c95c9cc10>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9aafd910>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9aafd910>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9846d6d0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9846d6d0>
+<keras.layers.core.Dropout object at 0x7f7c9ab076d0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c9ab076d0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9ab07dc0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9ab07dc0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c9856be50> with <keras_radam.optimizers.RAdam object at 0x7f7c890de970>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c9856a700>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-13T17:18:55.617/
+saving additional networks
+Network saved
+logging the results
+Found a better parameter.
+new best = [674.37657 674.37657 288.66811 8.69207 56.63514]
+old best = [727.2019775390625, 727.2019775390625, 348.5821731567383, 23.449900245666505, 96.60733642578126]
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c7f6bfb80>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c7f6bfb80>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c868ba460>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c868ba460>
+<keras.layers.core.Dropout object at 0x7f7c868bad30>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c868bad30>
+<keras.layers.convolutional.Conv2D object at 0x7f7c868ba130>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c868ba130>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c868b72e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c868b72e0>
+<keras.layers.core.Dropout object at 0x7f7c868b7220>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c868b7220>
+latent space shape is (28, 28, 32) : 300 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c868bfdf0>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c868bfdf0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c86898e80>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c86898e80>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c868985b0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c868985b0>
+<keras.layers.core.Dropout object at 0x7f7c81cfc220>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c81cfc220>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c868982e0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c868982e0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c9843efa0> with <keras_radam.optimizers.RAdam object at 0x7f7c818437c0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c8b893ee0>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-14T01:31:20.436/
+saving additional networks
+Network saved
+logging the results
+logging the results
+class precedence list:
+  <class 'latplan.model.ConvolutionalConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.mixins.encoder_decoder.StridedConvolutionalMixin'>
+  <class 'latplan.mixins.encoder_decoder.ConvolutionalMixin'>
+  <class 'latplan.model.ConcreteDetNormalizedLogitAddBidirectionalTransitionAEPlus'>
+  <class 'latplan.model.DetActionMixin'>
+  <class 'latplan.model.NormalizedLogitAddBidirectionalMixin'>
+  <class 'latplan.model.NormalizedLogitAddPreconditionMixin'>
+  <class 'latplan.model.NormalizedLogitAddEffectMixin'>
+  <class 'latplan.model.LogitEffectMixin'>
+  <class 'latplan.model.BaseActionMixinAMA4Plus'>
+  <class 'latplan.model.BidirectionalMixin'>
+  <class 'latplan.model.PreconditionMixin'>
+  <class 'latplan.model.EffectMixin'>
+  <class 'latplan.model.BaseActionMixin'>
+  <class 'latplan.model.TransitionWrapper'>
+  <class 'latplan.model.StateAE'>
+  <class 'latplan.mixins.latent.ConcreteLatentMixin'>
+  <class 'latplan.model.EarlyStopMixin'>
+  <class 'latplan.mixins.encoder_decoder.FullConnectedMixin'>
+  <class 'latplan.mixins.encoder_decoder.EncoderDecoderMixin'>
+  <class 'latplan.model.AE'>
+  <class 'latplan.network.Network'>
+  <class 'object'>
+clearning tf session
+cleared tf session
+Building networks
+building a convolutional encoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.convolutional.Conv2D object at 0x7f7c981884c0>
+[0, 28, 28, 3] -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c981884c0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c7f6872b0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c7f6872b0>
+<keras.layers.core.Dropout object at 0x7f7c7f6875b0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c7f6875b0>
+<keras.layers.convolutional.Conv2D object at 0x7f7c7f6870a0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2D object at 0x7f7c7f6870a0>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c7f687070>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c7f687070>
+<keras.layers.core.Dropout object at 0x7f7c7f687b20>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c7f687b20>
+latent space shape is (28, 28, 32) : 50 propositions in total
+building a convolutional decoder
+pool per layer: 1 depth: 2 total pool: 1 H: 28 W: 28 dH: 0 dW: 0
+<keras.layers.core.Reshape object at 0x7f7c7c08f130>
+[0, 28, 28, 32] -> (0, 28, 28, 32) : <keras.layers.core.Reshape object at 0x7f7c7c08f130>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a8d1a00>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c9a8d1a00>
+<keras.layers.normalization.BatchNormalization object at 0x7f7c9a8d1730>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.normalization.BatchNormalization object at 0x7f7c9a8d1730>
+<keras.layers.core.Dropout object at 0x7f7c7c0805e0>
+(0, 28, 28, 32) -> (0, 28, 28, 32) : <keras.layers.core.Dropout object at 0x7f7c7c0805e0>
+<keras.layers.convolutional.Conv2DTranspose object at 0x7f7c7c080fd0>
+(0, 28, 28, 32) -> (0, 28, 28, 3) : <keras.layers.convolutional.Conv2DTranspose object at 0x7f7c7c080fd0>
+Network built
+Building auxiliary networks
+Auxiliary network built
+Compiling networks
+there are 1 networks.
+there are 1 optimizers.
+there are 1 losses.
+compiling <keras.engine.training.Model object at 0x7f7c8415f2e0> with <keras_radam.optimizers.RAdam object at 0x7f7c8698aee0>, <function BaseActionMixinAMA4Plus._build_primary.<locals>.loss at 0x7f7c84163820>.
+Network compiled
+Saving the network to samples/sokoban_sokoban_image-20000-global-global-2-train_20000_CubeSpaceAE_AMA4Conv_kltune2/grid1/logs/05-14T09:51:56.314/
+saving additional networks
+Network saved
+logging the results
